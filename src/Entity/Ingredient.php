@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: IngredientRepository::class)]
+#[ORM\UniqueEntity('name')]
 class Ingredient
 {
     #[ORM\Id]
@@ -16,7 +17,7 @@ class Ingredient
 
     #[ORM\Column(length: 50)]
     #[Assert\Length(
-        min: 2,
+        min: 5,
         max: 50,
         minMessage: 'votre nom doit contenir au minimum 2 caractères',
         maxMessage: 'votre nom doit contenir au maximum 50 caractères'
