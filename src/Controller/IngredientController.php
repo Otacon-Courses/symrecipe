@@ -23,7 +23,7 @@ class IngredientController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    #[Route('/ingredient', name: 'ingredient', methods: ['GET'])]
+    #[Route('/ingredient', name: 'ingredient', methods: ['GET', 'POST'])]
     public function index(IngredientRepository $repository, PaginatorInterface $paginator, Request $request): Response
     {
         $ingredients = $paginator->paginate(

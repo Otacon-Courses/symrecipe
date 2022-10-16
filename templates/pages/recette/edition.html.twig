@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    SymRecipe - Nouvelle recette
+{% endblock %}
+
+
+{% block body %}
+    <div class="container mt-4">
+
+        <h1>
+            Création d'une recette
+        </h1>
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {{ form(form) }}
+    </div>
+{% endblock %}
